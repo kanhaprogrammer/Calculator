@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Favicon -->
+<link rel="icon" href="icons8-calculator-50.png" type="image/x-icon">
+  <!-- Main Calculator Container -->
+  <div class="container">
+    <div class="calculator">
+      <div class="tabs">
+        <button id="calcTab" class="active" onclick="switchTab('calc')">🧮 Calculator</button>
+        <button id="convTab" onclick="switchTab('converter')">💱 Currency Converter</button>
+      </div>
+
+      <!-- === Calculator Panel === -->
+      <div id="calcPanel">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+          <button onclick="clearDisplay()">C</button>
+          <button onclick="deleteLast()">⌫</button>
+          <button onclick="appendOperator('%')">%</button>
+          <button class="operator" onclick="appendOperator('/')">÷</button>
+
+          <button onclick="appendNumber('7')">7</button>
+          <button onclick="appendNumber('8')">8</button>
+          <button onclick="appendNumber('9')">9</button>
+          <button class="operator" onclick="appendOperator('*')">×</button>
+
+          <button onclick="appendNumber('4')">4</button>
+          <button onclick="appendNumber('5')">5</button>
+          <button onclick="appendNumber('6')">6</button>
+          <button class="operator" onclick="appendOperator('-')">−</button>
+
+          <button onclick="appendNumber('1')">1</button>
+          <button onclick="appendNumber('2')">2</button>
+          <button onclick="appendNumber('3')">3</button>
+          <button class="operator" onclick="appendOperator('+')">+</button>
+
+          <button onclick="appendNumber('0')">0</button>
+          <button onclick="appendDot()">.</button>
+          <button class="equals" onclick="calculate()">=</button>
+        </div>
+
+        <div class="history">
+          <h3>📜 History</h3>
+          <ul id="historyList"></ul>
+        </div>
+      </div>
+
+      <!-- === Currency Converter Panel === -->
+      <div id="converterPanel" class="hidden">
+        <h3>💱 Currency Converter</h3>
+        <div class="converter">
+          <input type="number" id="amount" placeholder="Enter amount">
+          <select id="fromCurrency"></select>
+          <select id="toCurrency"></select>
+          <button onclick="convertCurrency()">Convert</button>
+          <div id="convertedResult">Result will appear here</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Footer OUTSIDE container -->
+  <footer class="footer">
+    <p>Made with ❤️ by <strong>Kanha Sharma</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
